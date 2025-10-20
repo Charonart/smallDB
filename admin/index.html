@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="admin-header">
+        <h1><i class="fas fa-cog"></i> Quản lý hệ thống</h1>
+        <div class="user-info">
+            <span id="admin-username">Admin</span>
+            <button id="logout-btn" class="logout-btn">Đăng xuất</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <div class="admin-nav">
+            <a href="#" class="nav-link active" data-section="products">Quản lý sản phẩm</a>
+        </div>
+
+        <div class="section">
+            <!-- Products Management -->
+            <div id="products" class="content-section">
+                <h2>Quản lý sản phẩm</h2>
+                <button class="add-btn" id="open-add-product-modal">
+                    <i class="fas fa-plus"></i> Thêm sản phẩm
+                </button>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Danh mục</th>
+                            <th>Nổi bật</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal thêm/sửa sản phẩm -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-product-modal">&times;</span>
+                <h2>Thêm / Sửa Sản phẩm</h2>
+                <form id="product-form">
+                    <input type="hidden" id="product-id">
+                    <div class="form-group">
+                        <label for="product-name">Tên sản phẩm:</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Giá:</label>
+                        <input type="number" id="product-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">URL hình ảnh:</label>
+                        <input type="url" id="product-image" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Danh mục:</label>
+                        <select id="product-category" required>
+                            <option value="">Chọn danh mục</option>
+                            <option value="women">Thời trang nữ</option>
+                            <option value="men">Thời trang nam</option>
+                            <option value="kids">Thời trang trẻ em</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Mô tả:</label>
+                        <textarea id="product-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-hot">Sản phẩm nổi bật:</label>
+                        <input type="checkbox" id="product-hot">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-rating">Đánh giá:</label>
+                        <input type="number" id="product-rating" min="0" max="5" step="0.1" value="4.0">
+                    </div>
+                    <button type="submit" class="auth-btn">Lưu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

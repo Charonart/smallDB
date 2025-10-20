@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing - Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1 class="section-title">Tất cả sản phẩm</h1>
+        
+        <!-- Search and Filter -->
+        <div class="search-filter">
+            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." class="search-input">
+            <select id="category-filter" class="sort-select">
+                <option value="">Tất cả danh mục</option>
+                <option value="women">Thời trang nữ</option>
+                <option value="men">Thời trang nam</option>
+                <option value="kids">Thời trang trẻ em</option>
+            </select>
+            <select id="sort-price" class="sort-select">
+                <option value="">Sắp xếp theo giá</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+            </select>
+            <select id="sort-rating" class="sort-select">
+                <option value="">Sắp xếp theo đánh giá</option>
+                <option value="rating-asc">Đánh giá tăng dần</option>
+                <option value="rating-desc">Đánh giá giảm dần</option>
+            </select>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="all-product" class="products-grid"></div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
